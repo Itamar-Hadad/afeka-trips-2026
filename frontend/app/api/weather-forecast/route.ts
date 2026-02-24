@@ -4,12 +4,11 @@ import { NextRequest, NextResponse } from "next/server";
 const OPEN_METEO_URL = "https://api.open-meteo.com/v1/forecast";
 
 export async function GET(request: NextRequest) {
-  //get the lat and lon from the request
   const { searchParams } = new URL(request.url);
-  //get the lat and lon from the request
   const lat = searchParams.get("lat");
-  //get the lon from the request
   const lon = searchParams.get("lon");
+  // User's timezone so "tomorrow" is correct (server/Open-Meteo "auto" can be wrong)
+  const timezone = searchParams.get("tz") || searchParams.get("timezone") || "auto";
 
   //if the lat or lon is not found, return a 400 error
   if (lat == null || lon == null) {
@@ -36,7 +35,7 @@ export async function GET(request: NextRequest) {
     url.searchParams.set("longitude", String(lonNum));
     //daily is the daily forecast, temperature max, temperature min and precipitation sum
     url.searchParams.set("daily", "temperature_2m_max,temperature_2m_min,precipitation_sum");
-    url.searchParams.set("timezone", "auto");
+    url.searchParams.set("timezone", timezone);
 
     //next.js saves the response (the weather forecast) in the cache for 1 hour
     const res = await fetch(url.toString(), { next: { revalidate: 3600 } });

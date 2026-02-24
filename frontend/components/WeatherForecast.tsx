@@ -25,9 +25,9 @@ export default function WeatherForecast({ lat, lon, className = "" }: WeatherFor
   useEffect(() => {
     setError(null);
     setForecast(null);
-    //i create a new URLSearchParams object with the lat and lon
+    const tz = typeof Intl !== "undefined" ? Intl.DateTimeFormat().resolvedOptions().timeZone : "";
     const params = new URLSearchParams({ lat: String(lat), lon: String(lon) });
-    //i fetch the weather forecast from the backend, send it to the backend in the url
+    if (tz) params.set("tz", tz);
     fetch(`/api/weather-forecast?${params}`, { credentials: "include" })
       .then((res) => {
         if (!res.ok) throw new Error("Forecast unavailable"); //if the response is not ok, throw an error

@@ -273,6 +273,14 @@ async function getRoute(startCoords, endCoords, type = 'cycling-regular', option
   return gj;
 }
 
+/** Signature for a path: same points => same string. Used to hide duplicate routes (exactly same points). */
+function pathSignature(coords) {
+  if (!Array.isArray(coords) || coords.length === 0) return '';
+  return coords
+    .map(([lon, lat]) => `${Number(lon)},${Number(lat)}`)
+    .join('|');
+}
+
 // Trek: 5–10 km per day, one loop from same start. Optional preferredLengthKm to get different loops (for 1–3 routes).
 async function getHikeLoop5to10Km(startLon, startLat, preferredLengthKm = null) {
   const baseCandidates = [8, 7, 9, 6, 10, 5];
@@ -351,15 +359,19 @@ async function runRouteGeneration(destination, type, days = null) {
   const [destLon, destLat] = await getCoordinatesORS(destination);
 
   if (type === 'hike') {
-    // Trek: one day, 1–3 route options (loops) from same start, 5–10 km each. User does not choose days for trek.
+    // Trek: one day, 1–3 route options (loops) from same start, 5–10 km each. If two routes have exactly the same points, show only one.
     const pathDays = [];
+    const seenSignatures = new Set();
     const preferredLengths = [6, 8, 10]; // different lengths so we get 3 different loop options
     for (let i = 0; i < 3; i++) {
       try {
         const { coords } = await getHikeLoop5to10Km(destLon, destLat, preferredLengths[i]);
-        pathDays.push(coords);
+        const sig = pathSignature(coords);
+        if (!seenSignatures.has(sig)) {
+          seenSignatures.add(sig);
+          pathDays.push(coords);
+        }
       } catch (e) {
-        // if one loop fails, we still return what we have (1 or 2 routes is valid: "1–3 routes")
         if (pathDays.length === 0) throw e;
         break;
       }
