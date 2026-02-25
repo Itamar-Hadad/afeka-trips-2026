@@ -38,7 +38,7 @@ Edit `.env` and set:
 - `JWT_SECRET`: A long secret string (same value must be used in the frontend)
 - `ORS_API_KEY`: [OpenRouteService](https://openrouteservice.org/) API key
 - `GROQ_API_KEY`: [Groq](https://console.groq.com/) API key for LLM enrichment
-- `PORT` – Optional; default is `5001`
+- `PORT`: Optional; default is `5001`
 
 Start the backend:
 
@@ -65,9 +65,9 @@ cp .env.local.example .env.local
 
 Edit `.env.local` and set:
 
-- `NEXT_PUBLIC_API_URL` – Backend URL (e.g. `http://localhost:5001`)
-- `JWT_SECRET` – **Same value as in the backend** (required for middleware to verify/refresh JWT)
-- `UNSPLASH_ACCESS_KEY` – Optional; for destination images. If omitted, a placeholder image is used.
+- `NEXT_PUBLIC_API_URL`: Backend URL (e.g. `http://localhost:5001`)
+- `JWT_SECRET`: **Same value as in the backend** (required for middleware to verify/refresh JWT)
+- `UNSPLASH_ACCESS_KEY`: Optional; for destination images. If omitted, a placeholder image is used.
 
 Start the frontend in development mode:
 
