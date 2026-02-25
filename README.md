@@ -4,12 +4,6 @@ Plan hiking and cycling routes with maps, weather, and LLM-generated insights.
 
 ---
 
-## Cloud deployment
-
-**Live URL:** *(Add your deployed URL here after deploying, e.g. Vercel frontend + Railway/Render backend.)*
-
----
-
 ## Detailed installation
 
 ### Prerequisites
@@ -21,7 +15,7 @@ Plan hiking and cycling routes with maps, weather, and LLM-generated insights.
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Itamar-Hadad/afeka-trips-2026
 cd afeka-trips-2026
 ```
 
@@ -119,7 +113,7 @@ The user only visits the Next.js app; there is no separate React app (e.g. no Cr
 
 ### Features
 
-- **Route Planning:** User enters a destination and chooses Trek or Bicycle (and, for bicycle, 2 or 3 days). The backend uses OpenRouteService to generate the route(s): for Trek, 1–3 loop options (5–10 km each); for Bicycle, one multi-day route (30–70 km per day). The plan page shows a map (Leaflet), a 3-day weather forecast (Open-Meteo; “trip starts tomorrow”), one destination image (Unsplash if key is set), and LLM-generated insights (Groq): overview, segments, POIs, safety tips, gear, etc. User can **save** the route (name + description) to the database.
+- **Route Planning:** User enters a destination and chooses Trek or Bicycle (and, for bicycle, 2 or 3 days). The backend uses OpenRouteService to generate the route(s): for Trek, 1–3 loop options (5–10 km each); for Bicycle, one multi-day route (30–70 km per day). The plan page shows a map (Leaflet), a 3-day weather forecast (Open-Meteo; “trip starts tomorrow”), one destination image (Unsplash if key is set), and LLM generated insights (Groq): overview, segments, POIs, safety tips, gear, etc. User can **save** the route (name + description) to the database.
 - **Route History:** List of saved routes (from DB). User can **view** a route (map, distances, weather), **delete** it, or go back to the list. Weather is fetched again when viewing so it stays up to date (“trip starts tomorrow”).
 
 ### Tech stack
