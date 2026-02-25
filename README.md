@@ -34,10 +34,10 @@ cp .env.example .env
 
 Edit `.env` and set:
 
-- `MONGODB_URI` – MongoDB connection string (e.g. Atlas URI or `mongodb://localhost:27017/afeka-trips`)
-- `JWT_SECRET` – A long secret string (same value must be used in the frontend)
-- `ORS_API_KEY` – [OpenRouteService](https://openrouteservice.org/) API key
-- `GROQ_API_KEY` – [Groq](https://console.groq.com/) API key for LLM enrichment
+- `MONGODB_URI`: MongoDB connection string (e.g. Atlas URI or `mongodb://localhost:27017/afeka-trips`)
+- `JWT_SECRET`: A long secret string (same value must be used in the frontend)
+- `ORS_API_KEY`: [OpenRouteService](https://openrouteservice.org/) API key
+- `GROQ_API_KEY`: [Groq](https://console.groq.com/) API key for LLM enrichment
 - `PORT` – Optional; default is `5001`
 
 Start the backend:
