@@ -130,4 +130,24 @@ The user only visits the Next.js app; there is no separate React app (e.g. no Cr
 
 ---
 
-*Final project – Web Platform Development. Keep the Cloud deployment URL at the top updated after deployment.*
+## 📸 Screenshots
+
+### 🏠 Home Page
+<img width="1377" height="705" alt="Screenshot 2026-02-26 at 11 00 54" src="https://github.com/user-attachments/assets/5d266873-851d-4c84-ac4a-a4c47c04772d" />
+
+
+### 🗺️ Route Planning
+<img width="1390" height="764" alt="Screenshot 2026-02-26 at 11 01 32" src="https://github.com/user-attachments/assets/32958af4-2991-4bd1-a203-edf359bb75e5" />
+<img width="1498" height="768" alt="Screenshot 2026-02-26 at 11 01 44" src="https://github.com/user-attachments/assets/719d6982-55cc-4b16-8c45-6918d75af7ed" />
+<img width="1510" height="760" alt="Screenshot 2026-02-26 at 11 01 55" src="https://github.com/user-attachments/assets/08f1acf3-4a4c-4a13-930b-4b701d93e2b5" />
+
+
+### 📜 Route History
+<img width="1505" height="761" alt="Screenshot 2026-02-26 at 11 02 05" src="https://github.com/user-attachments/assets/614665b3-e086-4024-86e0-9856692569ca" />
+<img width="1187" height="772" alt="Screenshot 2026-02-26 at 11 12 03" src="https://github.com/user-attachments/assets/c0193f98-b42b-4431-81f0-c1441d11fc0c" />
+
+
+### 🔐 Authentication
+<img width="1512" height="697" alt="Screenshot 2026-02-26 at 11 06 54" src="https://github.com/user-attachments/assets/b66c2841-196a-497f-934d-b21f1b5ef04d" />
+
+
